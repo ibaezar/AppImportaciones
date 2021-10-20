@@ -22,7 +22,10 @@
     <h1 class="texto">Aplicación de importaciones</h1>
     <form id="form1" runat="server">
         <div>
-
+            <asp:Label ID="lbName" runat="server" Text="Nombre"></asp:Label><br />
+            <asp:TextBox ID="txtName" runat="server" placeholder="Ingrese su nombre"></asp:TextBox>
+            <br />
+            <asp:Button ID="btnSend" runat="server" Text="Enviar" />
         </div>
     </form>
 </body>
