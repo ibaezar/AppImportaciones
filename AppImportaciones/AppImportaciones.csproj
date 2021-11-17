@@ -67,17 +67,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="index.aspx" />
+    <Content Include="Views\AddCiudad.aspx" />
+    <Content Include="Views\AddPais.aspx" />
+    <Content Include="Views\AddProducto.aspx" />
+    <Content Include="Views\AddUsuario.aspx" />
+    <Content Include="Views\Index.aspx" />
+    <Content Include="Views\ListCiudad.aspx" />
+    <Content Include="Views\ListPais.aspx" />
+    <Content Include="Views\ListProducto.aspx" />
+    <Content Include="Views\ListUsuario.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="index.aspx.cs">
-      <DependentUpon>index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="index.aspx.designer.cs">
-      <DependentUpon>index.aspx</DependentUpon>
-    </Compile>
+    <Compile Include="Controllers\CiudadController.cs" />
+    <Compile Include="Controllers\Helpers.cs" />
+    <Compile Include="Controllers\PaisController.cs" />
+    <Compile Include="Controllers\ProductoController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Models\Administrador.cs" />
     <Compile Include="Models\CarritoCompra.cs" />
     <Compile Include="Models\Ciudad.cs" />
@@ -89,6 +95,69 @@
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\Vendedor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\AddCiudad.aspx.cs">
+      <DependentUpon>AddCiudad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AddCiudad.aspx.designer.cs">
+      <DependentUpon>AddCiudad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddPais.aspx.cs">
+      <DependentUpon>AddPais.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AddPais.aspx.designer.cs">
+      <DependentUpon>AddPais.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddProducto.aspx.cs">
+      <DependentUpon>AddProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AddProducto.aspx.designer.cs">
+      <DependentUpon>AddProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddUsuario.aspx.cs">
+      <DependentUpon>AddUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AddUsuario.aspx.designer.cs">
+      <DependentUpon>AddUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ListCiudad.aspx.cs">
+      <DependentUpon>ListCiudad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ListCiudad.aspx.designer.cs">
+      <DependentUpon>ListCiudad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ListPais.aspx.cs">
+      <DependentUpon>ListPais.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ListPais.aspx.designer.cs">
+      <DependentUpon>ListPais.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ListProducto.aspx.cs">
+      <DependentUpon>ListProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ListProducto.aspx.designer.cs">
+      <DependentUpon>ListProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ListUsuario.aspx.cs">
+      <DependentUpon>ListUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ListUsuario.aspx.designer.cs">
+      <DependentUpon>ListUsuario.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -99,10 +168,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Views\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -15,6 +15,22 @@ namespace AppImportaciones.Models
         private string rol;
         private string email;
         private int numCelular;
+        private string pais;
+        private string ciudad;
+
+        public string Ciudad
+        {
+            get { return ciudad; }
+            set { ciudad = value; }
+        }
+
+
+        public string Pais
+        {
+            get { return pais; }
+            set { pais = value; }
+        }
+
 
         public int NumCelular
         {

@@ -10,7 +10,15 @@ namespace AppImportaciones.Models
         private int idProducto;
         private string nombreProducto;
         private int stock;
+        private float valor;
         private int codigoVendedor;
+
+        public float Valor
+        {
+            get { return valor; }
+            set { valor = value; }
+        }
+
 
         public int CodigoVendedor
         {

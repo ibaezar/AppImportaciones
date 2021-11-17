@@ -9,6 +9,15 @@ namespace AppImportaciones.Models
     {
         private int idCiudad;
         private string nombreCiudad;
+        private int idPais;
+
+        public int IdPais
+        {
+            get { return idPais; }
+            set { idPais = value; }
+        }
+
+
 
         public string NombreCiudad
         {
