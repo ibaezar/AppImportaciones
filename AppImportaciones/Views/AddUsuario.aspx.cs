@@ -8,7 +8,7 @@ using AppImportaciones.Controllers;
 
 namespace AppImportaciones.Views
 {
-    public partial class AddUsuario : System.Web.UI.Page
+    public partial class AddUsuario1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -46,10 +46,10 @@ namespace AppImportaciones.Views
         public void cargarDropCiudad()
         {
             dropCiudad.DataSource = from c in CiudadController.getListado(dropPais.SelectedValue)
-                                  select new
-                                  {
-                                      ciudad = c.NombreCiudad
-                                  };
+                                    select new
+                                    {
+                                        ciudad = c.NombreCiudad
+                                    };
             dropCiudad.DataTextField = "ciudad";
             dropCiudad.DataBind();
         }
@@ -63,7 +63,7 @@ namespace AppImportaciones.Views
             catch (Exception ex)
             {
 
-                lbMensaje.Text = "Error: "+ex;
+                lbMensaje.Text = "Error: " + ex;
             }
         }
 

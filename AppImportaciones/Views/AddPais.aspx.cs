@@ -8,7 +8,7 @@ using AppImportaciones.Controllers;
 
 namespace AppImportaciones.Views
 {
-    public partial class AddPais : System.Web.UI.Page
+    public partial class AddPais1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="AppImportaciones.Views.Main" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>AppImportaciones</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+
+            <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal">
+                <Items>
+                    <asp:MenuItem NavigateUrl="~/Views/Index.aspx" Text="Inicio"></asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/Views/ListProducto.aspx" Text="Productos"></asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/Views/ListUsuario.aspx" Text="Usuarios"></asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/Views/ListPais.aspx" Text="Paises"></asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/Views/ListCiudad.aspx" Text="Ciudades"></asp:MenuItem>
+                </Items>
+            </asp:Menu>
+
+            <hr />
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

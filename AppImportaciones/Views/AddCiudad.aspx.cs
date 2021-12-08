@@ -8,7 +8,7 @@ using AppImportaciones.Controllers;
 
 namespace AppImportaciones.Views
 {
-    public partial class AddCiudad : System.Web.UI.Page
+    public partial class AddCiudad1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,7 +23,7 @@ namespace AppImportaciones.Views
         {
             dropPais.DataSource = from p in PaisController.getPais()
                                   select new
-                                  { 
+                                  {
                                       id = p.Idpais,
                                       nombre = p.NombrePais
                                   };

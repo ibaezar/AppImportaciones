@@ -1,15 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ListProducto.aspx.cs" Inherits="AppImportaciones.Views.ListProducto" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Main.Master" AutoEventWireup="true" CodeBehind="ListProducto.aspx.cs" Inherits="AppImportaciones.Views.ListProducto1" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div>
             <asp:Label ID="lbTitulo" runat="server" Text="Listado de productos"></asp:Label>
 
             <br /><br />
@@ -17,6 +10,4 @@
             <br /><br />
             <asp:LinkButton ID="lnkAgregar" runat="server" OnClick="lnkAgregar_Click">Agregar productos</asp:LinkButton>
         </div>
-    </form>
-</body>
-</html>
+</asp:Content>

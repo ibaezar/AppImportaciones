@@ -8,7 +8,7 @@ using AppImportaciones.Controllers;
 
 namespace AppImportaciones.Views
 {
-    public partial class AddProducto : System.Web.UI.Page
+    public partial class AddProducto1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -22,11 +22,11 @@ namespace AppImportaciones.Views
         public void cargarDropVendedor()
         {
             dropVendedor.DataSource = from v in UsuarioController.getUserByRol("Vendedor")
-                                    select new
-                                    {
-                                        id = v.IdUsuario,
-                                        nombre = v.Nombre + " " + v.PrimerApellido
-                                    };
+                                      select new
+                                      {
+                                          id = v.IdUsuario,
+                                          nombre = v.Nombre + " " + v.PrimerApellido
+                                      };
             dropVendedor.DataValueField = "id";
             dropVendedor.DataTextField = "nombre";
             dropVendedor.DataBind();

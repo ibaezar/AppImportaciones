@@ -8,7 +8,7 @@ using AppImportaciones.Controllers;
 
 namespace AppImportaciones.Views
 {
-    public partial class ListUsuario : System.Web.UI.Page
+    public partial class ListUsuario1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,17 +23,17 @@ namespace AppImportaciones.Views
         public void cargarGrid()
         {
             grdUsuarios.DataSource = from u in UsuarioController.getUsers()
-                                   select new
-                                   {
-                                       Nombre = u.Nombre,
-                                       ApellidoPaterno = u.PrimerApellido,
-                                       ApellidoMaterno = u.SegundoApellido,
-                                       Rol = u.Rol,
-                                       FechaNacimiento = u.FechaNacimiento,
-                                       Email = u.Email,
-                                       Pais = u.Pais,
-                                       Ciudad = u.Ciudad
-                                   };
+                                     select new
+                                     {
+                                         Nombre = u.Nombre,
+                                         ApellidoPaterno = u.PrimerApellido,
+                                         ApellidoMaterno = u.SegundoApellido,
+                                         Rol = u.Rol,
+                                         FechaNacimiento = u.FechaNacimiento,
+                                         Email = u.Email,
+                                         Pais = u.Pais,
+                                         Ciudad = u.Ciudad
+                                     };
             grdUsuarios.DataBind();
 
         }

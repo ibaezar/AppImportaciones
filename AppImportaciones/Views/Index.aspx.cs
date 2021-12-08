@@ -11,27 +11,7 @@ namespace AppImportaciones.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-          
-        }
 
-        protected void lnkUsuario_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("ListUsuario.aspx");
-        }
-
-        protected void lnkPais_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("ListPais.aspx");
-        }
-
-        protected void lnkCiudad_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("ListCiudad.aspx");
-        }
-
-        protected void lnkProducto_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("ListProducto.aspx");
         }
     }
 }

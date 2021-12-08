@@ -8,7 +8,7 @@ using AppImportaciones.Controllers;
 
 namespace AppImportaciones.Views
 {
-    public partial class ListCiudad : System.Web.UI.Page
+    public partial class ListCiudad1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -39,8 +39,12 @@ namespace AppImportaciones.Views
 
         public string cargarGrid()
         {
+            grdCiudad.DataSource = null;
+            grdCiudad.DataBind();
+
             try
             {
+
                 grdCiudad.DataSource = from c in CiudadController.getListado(dropPais.SelectedValue)
                                        select new
                                        {
