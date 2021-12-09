@@ -25,8 +25,8 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="login">
 
+    <div class="login">
         <table class="auto-style1" >
             <tr>
                 <td colspan="2"><strong>Ingresar a mi cuenta</strong></td>
@@ -42,7 +42,7 @@
             <tr>
                 <td class="auto-style11">Contraseña</td>
                 <td class="auto-style8">
-                    <asp:TextBox ID="txtPassword" runat="server" Height="16px" TextMode="Password"></asp:TextBox>
+                    <asp:TextBox ID="txtPassword" runat="server" CssClass="auto-style9" TextMode="Password"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtPassword" ErrorMessage="Contraseña requerida" ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
             </tr>

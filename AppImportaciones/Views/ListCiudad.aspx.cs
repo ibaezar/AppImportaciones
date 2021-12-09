@@ -62,6 +62,7 @@ namespace AppImportaciones.Views
 
         protected void lnkAgregar_Click(object sender, EventArgs e)
         {
+            System.Threading.Thread.Sleep(2000);
             Response.Redirect("AddCiudad.aspx");
         }
 

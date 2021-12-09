@@ -35,11 +35,13 @@ namespace AppImportaciones.Views
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
+            System.Threading.Thread.Sleep(2000);
             lbMensaje.Text = CiudadController.addCiudad(txtId.Text, txtNombre.Text, dropPais.SelectedValue);
         }
 
         protected void lnkListar_Click(object sender, EventArgs e)
         {
+            System.Threading.Thread.Sleep(2000);
             Response.Redirect("ListCiudad.aspx");
         }
     }

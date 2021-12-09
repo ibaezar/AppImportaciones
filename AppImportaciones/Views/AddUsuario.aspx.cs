@@ -56,6 +56,7 @@ namespace AppImportaciones.Views
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
+            System.Threading.Thread.Sleep(2000);
             try
             {
                 lbMensaje.Text = UsuarioController.addUsuario(txtId.Text, txtNombre.Text, txtAp1.Text, txtAp2.Text, txtFecha.Text, dropRol.SelectedValue, txtEmail.Text, txtNum.Text, dropPais.SelectedValue, dropCiudad.SelectedValue, txtPassword.Text);
@@ -75,6 +76,7 @@ namespace AppImportaciones.Views
 
         protected void lnkListar_Click(object sender, EventArgs e)
         {
+            System.Threading.Thread.Sleep(2000);
             Response.Redirect("ListUsuario.aspx");
         }
     }

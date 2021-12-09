@@ -34,11 +34,13 @@ namespace AppImportaciones.Views
 
         protected void lnkAgregar_Click(object sender, EventArgs e)
         {
+            System.Threading.Thread.Sleep(2000);
             lbMensaje.Text = ProductoController.addProducto(txtId.Text, txtNombre.Text, txtValor.Text, txtStock.Text, dropVendedor.SelectedValue);
         }
 
         protected void lnkListar_Click(object sender, EventArgs e)
         {
+            System.Threading.Thread.Sleep(2000);
             Response.Redirect("ListProducto.aspx");
         }
     }

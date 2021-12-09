@@ -31,7 +31,10 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div>
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <ContentTemplate>
+            <div>
 
             <table class="auto-style1">
                 <tr>
@@ -100,7 +103,7 @@
                     <td>
                         <asp:DropDownList ID="dropPais" runat="server">
                         </asp:DropDownList>
-                        <asp:LinkButton ID="lnkSeleccionar" runat="server" OnClick="lnkSeleccionar_Click">Seleccionar</asp:LinkButton>
+                        <asp:LinkButton ID="lnkSeleccionar" CausesValidation="false" runat="server" OnClick="lnkSeleccionar_Click">Seleccionar</asp:LinkButton>
                     </td>
                 </tr>
                 <tr>
@@ -137,10 +140,34 @@
                 </tr>
                 <tr>
                     <td colspan="2" class="auto-style21">
-                        <asp:LinkButton ID="lnkListar" runat="server" OnClick="lnkListar_Click">Listar Usuarios</asp:LinkButton>
+                        <asp:LinkButton ID="lnkListar" CausesValidation="false" runat="server" OnClick="lnkListar_Click">Listar Usuarios</asp:LinkButton>
                     </td>
                 </tr>
             </table>
 
         </div>
+        </ContentTemplate>
+    </asp:UpdatePanel>
+    <asp:UpdateProgress ID="UpdateProgress1" AssociatedUpdatePanelID="UpdatePanel1" runat="server">
+        <ProgressTemplate>
+            <!--SPINNER-->
+            <div class="spinner">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header justify-content-center">
+                                <h4>Cargando datos</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="text-center">
+                                <p>Espere mientras carga la información</p>
+                                <div class="spinner-border text-success" style="width: 3rem; height: 3rem;" role="status">
+                                    <span class="sr-only">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ProgressTemplate>
+    </asp:UpdateProgress>
 </asp:Content>
