@@ -17,6 +17,14 @@ namespace AppImportaciones.Models
         private int numCelular;
         private string pais;
         private string ciudad;
+        private string password;
+
+        public string Password
+        {
+            get { return password; }
+            set { password = value; }
+        }
+
 
         public string Ciudad
         {

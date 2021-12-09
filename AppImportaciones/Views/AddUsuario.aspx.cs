@@ -58,7 +58,7 @@ namespace AppImportaciones.Views
         {
             try
             {
-                lbMensaje.Text = UsuarioController.addUsuario(txtId.Text, txtNombre.Text, txtAp1.Text, txtAp2.Text, txtFecha.Text, dropRol.SelectedValue, txtEmail.Text, txtNum.Text, dropPais.SelectedValue, dropCiudad.SelectedValue);
+                lbMensaje.Text = UsuarioController.addUsuario(txtId.Text, txtNombre.Text, txtAp1.Text, txtAp2.Text, txtFecha.Text, dropRol.SelectedValue, txtEmail.Text, txtNum.Text, dropPais.SelectedValue, dropCiudad.SelectedValue, txtPassword.Text);
             }
             catch (Exception ex)
             {

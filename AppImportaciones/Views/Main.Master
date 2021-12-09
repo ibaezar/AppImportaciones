@@ -16,13 +16,28 @@
             <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal">
                 <Items>
                     <asp:MenuItem NavigateUrl="~/Views/Index.aspx" Text="Inicio"></asp:MenuItem>
-                    <asp:MenuItem NavigateUrl="~/Views/ListProducto.aspx" Text="Productos"></asp:MenuItem>
-                    <asp:MenuItem NavigateUrl="~/Views/ListUsuario.aspx" Text="Usuarios"></asp:MenuItem>
-                    <asp:MenuItem NavigateUrl="~/Views/ListPais.aspx" Text="Paises"></asp:MenuItem>
-                    <asp:MenuItem NavigateUrl="~/Views/ListCiudad.aspx" Text="Ciudades"></asp:MenuItem>
+                    <asp:MenuItem Text="Productos">
+                        <asp:MenuItem NavigateUrl="~/Views/ListProducto.aspx" Text="Listar Productos"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Views/AddProducto.aspx" Text="Crear Producto"></asp:MenuItem>
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="Usuarios">
+                        <asp:MenuItem NavigateUrl="~/Views/ListUsuario.aspx" Text="Listar Usuarios"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Views/AddUsuario.aspx" Text="Crear Usuario"></asp:MenuItem>
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="Paises">
+                        <asp:MenuItem NavigateUrl="~/Views/ListPais.aspx" Text="Listar Paises"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Views/AddPais.aspx" Text="Crear País"></asp:MenuItem>
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="Ciudades">
+                        <asp:MenuItem NavigateUrl="~/Views/ListCiudad.aspx" Text="Listar Ciudades"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Views/AddCiudad.aspx" Text="Crear Ciudad"></asp:MenuItem>
+                    </asp:MenuItem>
                 </Items>
             </asp:Menu>
 
+            <br />
+            <br />
+            <br />
             <hr />
 
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

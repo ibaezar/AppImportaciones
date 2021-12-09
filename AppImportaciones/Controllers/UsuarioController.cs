@@ -12,7 +12,7 @@ namespace AppImportaciones.Controllers
         private static List<Usuario> UserByRol = new List<Usuario>();
         private static List<Usuario> listaUsuario = new List<Usuario>();
 
-        public static string addUsuario(string id, string nombre, string apellido1, string apellido2, string fecha, string rol, string email, string num, string pais, string ciudad)
+        public static string addUsuario(string id, string nombre, string apellido1, string apellido2, string fecha, string rol, string email, string num, string pais, string ciudad, string password)
         {
             try
             {
@@ -27,7 +27,8 @@ namespace AppImportaciones.Controllers
                     Email = email,
                     NumCelular = int.Parse(num),
                     Pais = pais,
-                    Ciudad = ciudad
+                    Ciudad = ciudad,
+                    Password = password
                 };
 
                 listaUsuario.Add(usuario);
@@ -77,11 +78,11 @@ namespace AppImportaciones.Controllers
         {
             if (listaUsuario.Count < 1)
             {
-                addUsuario("1", "Izhar", "Baeza", "Reyes", "13-01-1994", "Administrador", "ibaezar@outlook.com", "994905228", "Chile", "Santiago");
-                addUsuario("2", "Geremy", "Navarrete", "Suazo", "20-02-1996", "Administrador", "gnavarrete@gmail.com", "994523587", "Chile", "Santiago");
-                addUsuario("3", "Yuber", "Gallardo", "Reyes", "26-06-1990", "Administrador", "ygallardo@gmail.com", "984624659", "Chile", "Santiago");
-                addUsuario("4", "Elena", "Nito", "Delgado", "30-08-1998", "Vendedor", "enito@gmail.com", "975132695", "Argentina", "Buenos Aires");
-                addUsuario("5", "Felipe", "Kast", "Izquierdo", "25-03-1970", "Comprador", "fkast@gmail.com", "951235467", "Cuba", "La Habana");
+                addUsuario("1", "Izhar", "Baeza", "Reyes", "13-01-1994", "Administrador", "ibaezar@outlook.com", "994905228", "Chile", "Santiago", "123456");
+                addUsuario("2", "Geremy", "Navarrete", "Suazo", "20-02-1996", "Administrador", "gnavarrete@gmail.com", "994523587", "Chile", "Santiago", "123456");
+                addUsuario("3", "Yuber", "Gallardo", "Reyes", "26-06-1990", "Administrador", "ygallardo@gmail.com", "984624659", "Chile", "Santiago", "123456");
+                addUsuario("4", "Elena", "Nito", "Delgado", "30-08-1998", "Vendedor", "enito@gmail.com", "975132695", "Argentina", "Buenos Aires", "123456");
+                addUsuario("5", "Felipe", "Kast", "Izquierdo", "25-03-1970", "Comprador", "fkast@gmail.com", "951235467", "Cuba", "La Habana", "123456");
             }
         }
     }
