@@ -13,5 +13,14 @@ namespace AppImportaciones.Views
         {
 
         }
+
+        protected void lnkCerrar_Click(object sender, EventArgs e)
+        {
+            if(Session["login"] != null)
+            {
+                Session["login"] = null;
+                Response.Redirect("index.aspx");
+            }
+        }
     }
 }

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using AppImportaciones.Controllers;
+using AppImportaciones.Models;
 
 namespace AppImportaciones.Views
 {
@@ -13,6 +14,22 @@ namespace AppImportaciones.Views
         protected void Page_Load(object sender, EventArgs e)
         {
             Helpers.precargarDatos();
+
+            //Validacion de usuario administrador
+            if (Session["login"] != null)
+            {
+                Usuario usr = (Usuario)Session["login"];
+                if (usr.Rol != "Administrador")
+                {
+                    Response.Redirect("index.aspx");
+                }
+            }
+            else
+            {
+                Response.Redirect("index.aspx");
+            }
+            //Fin validacion
+
             if (!IsPostBack)
             {
                 cargarDrop();

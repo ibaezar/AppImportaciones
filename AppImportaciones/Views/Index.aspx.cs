@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using AppImportaciones.Controllers;
 
 namespace AppImportaciones.Views
 {
@@ -11,12 +12,36 @@ namespace AppImportaciones.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Helpers.precargarDatos();
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            try
+            {
+                foreach (var usuario in UsuarioController.getUsers())
+                {
+                    if (usuario.Email.Equals(txtEmail.Text))
+                    {
+                        if (usuario.Password.Equals(txtPassword.Text))
+                        {
+                            Session["login"] = usuario;
+                            Response.Redirect("ListUsuario.aspx");
+                        }
+                        else
+                        {
+                            Session["login"] = null;
+                            Session["Error"] = "Usuario o contraseña incorrectos";
+                            lbMensaje.Text = Session["error"].ToString();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
 
+                lbMensaje.Text = "Error: " + ex.Message;
+            }
         }
     }
 }

@@ -30,7 +30,13 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal">
+            <table class="w-100">
+                <tr>
+                    <td>
+                        <h2>AppImportaciones</h2>
+                    </td>
+                    <td>
+                        <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal">
                 <Items>
                     <asp:MenuItem NavigateUrl="~/Views/Index.aspx" Text="Inicio"></asp:MenuItem>
                     <asp:MenuItem Text="Productos">
@@ -51,6 +57,12 @@
                     </asp:MenuItem>
                 </Items>
             </asp:Menu>
+                    </td>
+                    <td>
+                        <asp:LinkButton ID="lnkCerrar" CausesValidation="false" runat="server" OnClick="lnkCerrar_Click">Cerrar sesión</asp:LinkButton>
+                    </td>
+                </tr>
+            </table>
 
             <br />
             <br />
