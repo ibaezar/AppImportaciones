@@ -20,13 +20,6 @@
 
                 <table class="auto-style1">
                     <tr>
-                        <td class="auto-style2">Id Producto</td>
-                        <td>
-                            <asp:TextBox ID="txtId" runat="server"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtId" ErrorMessage="Campo Requerido" ForeColor="Red"></asp:RequiredFieldValidator>
-                        </td>
-                    </tr>
-                    <tr>
                         <td class="auto-style2">Nombre Producto</td>
                         <td>
                             <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
@@ -45,13 +38,6 @@
                         <td>
                             <asp:TextBox ID="txtStock" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtValor" ErrorMessage="Campo Requerido" ForeColor="Red"></asp:RequiredFieldValidator>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="auto-style2">Vendedor Encargado</td>
-                        <td>
-                            <asp:DropDownList ID="dropVendedor" runat="server">
-                            </asp:DropDownList>
                         </td>
                     </tr>
                     <tr>

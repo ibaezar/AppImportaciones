@@ -26,30 +26,17 @@ namespace AppImportaciones.Views
                 Response.Redirect("index.aspx");
             }
             //Fin validacion
-
-            if (!IsPostBack)
-            {
-                cargarDropVendedor();
-            }
-        }
-
-        public void cargarDropVendedor()
-        {
-            dropVendedor.DataSource = from v in UsuarioController.getUserByRol("Vendedor")
-                                      select new
-                                      {
-                                          id = v.idUsuario,
-                                          nombre = v.nombre + " " + v.primerApellido
-                                      };
-            dropVendedor.DataValueField = "id";
-            dropVendedor.DataTextField = "nombre";
-            dropVendedor.DataBind();
         }
 
         protected void lnkAgregar_Click(object sender, EventArgs e)
         {
             System.Threading.Thread.Sleep(2000);
-            lbMensaje.Text = ProductoController.addProducto(txtId.Text, txtNombre.Text, txtValor.Text, txtStock.Text, dropVendedor.SelectedValue);
+            lbMensaje.Text = ProductoController.addProducto(txtNombre.Text, txtValor.Text, txtStock.Text);
+            
+            //Limpiar campos
+            txtNombre.Text = "";
+            txtStock.Text = "";
+            txtValor.Text = "";
         }
 
         protected void lnkListar_Click(object sender, EventArgs e)
