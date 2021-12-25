@@ -6,11 +6,8 @@
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             <div>
-                <asp:Label ID="lbTitulo" runat="server" Text="Agregar Pais"></asp:Label><br /><br />
-                <asp:TextBox ID="txtId" runat="server" placeholder="Id"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtId" ErrorMessage="Campo Requerido" ForeColor="Red"></asp:RequiredFieldValidator><br />
-                <asp:TextBox ID="txtNombre" runat="server" placeholder="Nombre"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtNombre" ErrorMessage="Campo Requerido" ForeColor="Red"></asp:RequiredFieldValidator><br /><br />
+                    <asp:TextBox ID="txtNombre" runat="server" placeholder="Nombre"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtNombre" ErrorMessage="Campo Requerido" ForeColor="Red"></asp:RequiredFieldValidator><br /><br />
                 <asp:LinkButton ID="lnkAgregar" runat="server" OnClick="lnkAgregar_Click">Agregar</asp:LinkButton><br />
                 <asp:Label ID="lbMensaje" runat="server" Text=""></asp:Label>
                 <br />

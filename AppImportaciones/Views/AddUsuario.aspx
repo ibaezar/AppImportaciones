@@ -41,13 +41,6 @@
                     <td colspan="2"><strong>Agregar nuevo Usuario</strong></td>
                 </tr>
                 <tr>
-                    <td class="auto-style11">ID</td>
-                    <td class="auto-style18">
-                        <asp:TextBox ID="txtId" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtId" ErrorMessage="Campo requerido" ForeColor="Red"></asp:RequiredFieldValidator>
-                    </td>
-                </tr>
-                <tr>
                     <td class="auto-style7">Nombre</td>
                     <td class="auto-style19">
                         <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
@@ -94,22 +87,22 @@
                 <tr>
                     <td class="auto-style22">Numero de celular</td>
                     <td>
-                        <asp:TextBox ID="txtNum" runat="server"></asp:TextBox>
+                        +56
+                        <asp:TextBox ID="txtNum" runat="server" Width="147px"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtNum" ErrorMessage="Campo requerido" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style22">País</td>
                     <td>
-                        <asp:DropDownList ID="dropPais" runat="server">
+                        <asp:DropDownList ID="dropPais" runat="server" OnSelectedIndexChanged="dropPais_SelectedIndexChanged" AutoPostBack="true">
                         </asp:DropDownList>
-                        <asp:LinkButton ID="lnkSeleccionar" CausesValidation="false" runat="server" OnClick="lnkSeleccionar_Click">Seleccionar</asp:LinkButton>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style7">Ciudad</td>
                     <td class="auto-style19">
-                        <asp:DropDownList ID="dropCiudad" runat="server" Enabled="False">
+                        <asp:DropDownList ID="dropCiudad" runat="server">
                         </asp:DropDownList>
                     </td>
                 </tr>

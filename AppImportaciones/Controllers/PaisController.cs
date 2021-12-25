@@ -2,26 +2,26 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using AppImportaciones.Models;
 
 namespace AppImportaciones.Controllers
 {
     public class PaisController
     {
         private static List<Pais> listaPais = new List<Pais>();
+        private static DB_AppImportacionesEntities db = new DB_AppImportacionesEntities();
 
         //Metodo para agregar pais
-        public static string addPais(string idPais, string nombrePais)
+        public static string addPais(string nombrePais)
         {
             try
             {
                 Pais pais = new Pais()
                 {
-                    Idpais = int.Parse(idPais),
-                    NombrePais = nombrePais
+                    nombrePais = nombrePais
                 };
 
-                listaPais.Add(pais);
+                db.Pais.Add(pais);
+                db.SaveChanges();
 
                 return "Pais agregado correctamente";
             }
@@ -34,9 +34,15 @@ namespace AppImportaciones.Controllers
         //Buscar por id
         public static Pais findById(string id)
         {
+            listaPais.Clear();
+            foreach (Pais pais in db.Pais)
+            {
+                listaPais.Add(pais);
+            }
+
             foreach (Pais pais in listaPais)
             {
-                if (pais.Idpais.Equals(int.Parse(id)))
+                if (pais.idPais.Equals(int.Parse(id)))
                 {
                     return pais;
                 }
@@ -48,21 +54,13 @@ namespace AppImportaciones.Controllers
         //Metodo para listar paises
         public static List<Pais> getPais()
         {
-            return listaPais;
-        }
-
-        //Precargar listado
-        public static void cargar()
-        {
-            if(listaPais.Count < 1)
+            listaPais.Clear();
+            foreach (Pais pais in db.Pais)
             {
-                addPais("1", "Chile");
-                addPais("2", "Argentina");
-                addPais("3", "Brasil");
-                addPais("4", "Perú");
-                addPais("5", "Colombia");
-                addPais("6", "Cuba");
+                listaPais.Add(pais);
             }
+
+            return listaPais;
         }
     }
 }  

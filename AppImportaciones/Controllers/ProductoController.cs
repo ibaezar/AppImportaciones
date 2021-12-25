@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using AppImportaciones.Models;
 
 namespace AppImportaciones.Controllers
 {
@@ -16,11 +15,11 @@ namespace AppImportaciones.Controllers
             {
                 Producto producto = new Producto() 
                 {
-                    Idproducto = int.Parse(id),
-                    NombreProducto = nombre,
-                    Valor = float.Parse(valor),
-                    Stock = int.Parse(stock),
-                    CodigoVendedor = int.Parse(idVendedor)
+                    idProducto = int.Parse(id),
+                    nombreProducto = nombre,
+                    valor = float.Parse(valor),
+                    stock = int.Parse(stock)
+                    //codigoVendedor = int.Parse(idVendedor)
                 };
                 
                 listaProducto.Add(producto);
@@ -36,19 +35,6 @@ namespace AppImportaciones.Controllers
         public  static List<Producto> GetProductos()
         {
             return listaProducto;
-        }
-
-        //Precargar datos
-        public static void cargar()
-        {
-            if (listaProducto.Count < 1)
-            {
-                addProducto("1", "Manzanas", "50", "10000", "4");
-                addProducto("2", "Naranjas", "60", "12000", "4");
-                addProducto("3", "Platanos", "100", "18000", "4");
-                addProducto("4", "Duraznos", "80", "5000", "4");
-                addProducto("5", "Uvas", "100", "130000", "4");
-            }
         }
     }
 }

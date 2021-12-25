@@ -29,13 +29,6 @@
                     <td class="auto-style3" colspan="2">Agregar Ciudad</td>
                 </tr>
                 <tr>
-                    <td class="auto-style4">Id Ciudad</td>
-                    <td class="auto-style5">
-                        <asp:TextBox ID="txtId" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtId" ErrorMessage="Campo Requerido" ForeColor="Red"></asp:RequiredFieldValidator>
-                    </td>
-                </tr>
-                <tr>
                     <td class="auto-style2">Nombre Ciudad</td>
                     <td>
                         <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>

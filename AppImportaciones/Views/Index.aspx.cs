@@ -12,7 +12,7 @@ namespace AppImportaciones.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Helpers.precargarDatos();
+
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -21,9 +21,9 @@ namespace AppImportaciones.Views
             {
                 foreach (var usuario in UsuarioController.getUsers())
                 {
-                    if (usuario.Email.Equals(txtEmail.Text))
+                    if (usuario.email.Equals(txtEmail.Text))
                     {
-                        if (usuario.Password.Equals(txtPassword.Text))
+                        if (usuario.password.Equals(txtPassword.Text))
                         {
                             Session["login"] = usuario;
                             Response.Redirect("ListUsuario.aspx");

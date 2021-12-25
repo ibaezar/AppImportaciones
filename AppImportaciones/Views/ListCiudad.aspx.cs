@@ -13,12 +13,9 @@ namespace AppImportaciones.Views
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            Helpers.precargarDatos();
-
             if (!IsPostBack)
             {
                 cargarDrop();
-                cargarGrid();
             }
 
         }
@@ -28,8 +25,8 @@ namespace AppImportaciones.Views
             dropPais.DataSource = from p in PaisController.getPais()
                                   select new
                                   {
-                                      id = p.Idpais,
-                                      nombre = p.NombrePais
+                                      id = p.idPais,
+                                      nombre = p.nombrePais
                                   };
             dropPais.DataValueField = "id";
             dropPais.DataTextField = "nombre";
@@ -39,16 +36,13 @@ namespace AppImportaciones.Views
 
         public string cargarGrid()
         {
-            grdCiudad.DataSource = null;
-            grdCiudad.DataBind();
-
             try
             {
 
                 grdCiudad.DataSource = from c in CiudadController.getListado(dropPais.SelectedValue)
                                        select new
                                        {
-                                           Ciudad = c.NombreCiudad
+                                           Ciudades = c.nombreCiudad
                                        };
 
                 grdCiudad.DataBind();

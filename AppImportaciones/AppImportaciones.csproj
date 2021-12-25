@@ -43,7 +43,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -67,6 +75,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\DB_AppImportaciones.mdf" />
+    <Content Include="App_Data\DB_AppImportaciones_log.ldf">
+      <DependentUpon>DB_AppImportaciones.mdf</DependentUpon>
+    </Content>
+    <Content Include="Modelo1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Modelo1.edmx</DependentUpon>
+      <LastGenOutput>Modelo1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Modelo1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Modelo1.edmx</DependentUpon>
+      <LastGenOutput>Modelo1.cs</LastGenOutput>
+    </Content>
     <Content Include="Views\AddCiudad.aspx" />
     <Content Include="Views\AddPais.aspx" />
     <Content Include="Views\AddProducto.aspx" />
@@ -79,11 +101,32 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ciudad.cs">
+      <DependentUpon>Modelo1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\CiudadController.cs" />
     <Compile Include="Controllers\Helpers.cs" />
     <Compile Include="Controllers\PaisController.cs" />
     <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="DetallePedido.cs">
+      <DependentUpon>Modelo1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Modelo1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Modelo1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Modelo1.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Administrador.cs" />
     <Compile Include="Models\CarritoCompra.cs" />
     <Compile Include="Models\Ciudad.cs" />
@@ -94,7 +137,22 @@
     <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\Vendedor.cs" />
+    <Compile Include="Pais.cs">
+      <DependentUpon>Modelo1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pedido.cs">
+      <DependentUpon>Modelo1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Producto.cs">
+      <DependentUpon>Modelo1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Usuario.cs">
+      <DependentUpon>Modelo1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario_Producto.cs">
+      <DependentUpon>Modelo1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Views\AddCiudad.aspx.cs">
       <DependentUpon>AddCiudad.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -167,6 +225,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EntityDeploy Include="Modelo1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Modelo1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Modelo1.edmx.diagram">
+      <DependentUpon>Modelo1.edmx</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <Content Include="Views\Main.Master" />
     <None Include="Web.Debug.config">
@@ -175,6 +240,9 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

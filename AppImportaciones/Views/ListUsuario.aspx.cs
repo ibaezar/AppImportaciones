@@ -13,13 +13,11 @@ namespace AppImportaciones.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Helpers.precargarDatos();
-
             //Validacion de usuario administrador
             if (Session["login"] != null)
             {
                 Usuario usr = (Usuario)Session["login"];
-                if (usr.Rol != "Administrador")
+                if (usr.rol != "Administrador")
                 {
                     Response.Redirect("index.aspx");
                 }
@@ -41,12 +39,12 @@ namespace AppImportaciones.Views
             grdUsuarios.DataSource = from u in UsuarioController.getUsers()
                                      select new
                                      {
-                                         Nombre = u.Nombre,
-                                         ApellidoPaterno = u.PrimerApellido,
-                                         ApellidoMaterno = u.SegundoApellido,
-                                         Rol = u.Rol,
-                                         FechaNacimiento = u.FechaNacimiento,
-                                         Email = u.Email,
+                                         Nombre = u.nombre,
+                                         ApellidoPaterno = u.primerApellido,
+                                         ApellidoMaterno = u.segundoApellido,
+                                         Rol = u.rol,
+                                         FechaNacimiento = u.fechaNacimiento,
+                                         Email = u.email,
                                          Pais = u.Pais,
                                          Ciudad = u.Ciudad
                                      };

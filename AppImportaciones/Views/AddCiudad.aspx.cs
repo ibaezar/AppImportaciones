@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using AppImportaciones.Controllers;
-using AppImportaciones.Models;
 
 namespace AppImportaciones.Views
 {
@@ -13,13 +12,11 @@ namespace AppImportaciones.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Helpers.precargarDatos();
-
             //Validacion de usuario administrador
             if (Session["login"] != null)
             {
                 Usuario usr = (Usuario)Session["login"];
-                if (usr.Rol != "Administrador")
+                if (usr.rol != "Administrador")
                 {
                     Response.Redirect("index.aspx");
                 }
@@ -41,8 +38,8 @@ namespace AppImportaciones.Views
             dropPais.DataSource = from p in PaisController.getPais()
                                   select new
                                   {
-                                      id = p.Idpais,
-                                      nombre = p.NombrePais
+                                      id = p.idPais,
+                                      nombre = p.nombrePais
                                   };
             dropPais.DataValueField = "id";
             dropPais.DataTextField = "nombre";
@@ -53,7 +50,8 @@ namespace AppImportaciones.Views
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
             System.Threading.Thread.Sleep(2000);
-            lbMensaje.Text = CiudadController.addCiudad(txtId.Text, txtNombre.Text, dropPais.SelectedValue);
+            lbMensaje.Text = CiudadController.addCiudad(txtNombre.Text, dropPais.SelectedValue);
+            txtNombre.Text = "";
         }
 
         protected void lnkListar_Click(object sender, EventArgs e)

@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using AppImportaciones.Controllers;
-using AppImportaciones.Models;
 
 namespace AppImportaciones.Views
 {
@@ -15,14 +14,11 @@ namespace AppImportaciones.Views
         {
             if (!IsPostBack)
             {
-                //Precarga de datos
-                Helpers.precargarDatos();
-
                 //Validacion de usuario administrador
                 if (Session["login"] != null)
                 {
                     Usuario usr = (Usuario)Session["login"];
-                    if (usr.Rol != "Administrador")
+                    if (usr.rol != "Administrador")
                     {
                         Response.Redirect("index.aspx");
                     }
@@ -33,9 +29,10 @@ namespace AppImportaciones.Views
                 }
                 //Fin validacion
 
-
+                UsuarioController.cargarRol();
                 cargarDropRol();
                 cargarDropPais();
+                cargarDropCiudad();
             }
         }
 
@@ -51,8 +48,8 @@ namespace AppImportaciones.Views
             dropPais.DataSource = from p in PaisController.getPais()
                                   select new
                                   {
-                                      id = p.Idpais,
-                                      Pais = p.NombrePais
+                                      id = p.idPais,
+                                      Pais = p.nombrePais
                                   };
             dropPais.DataValueField = "id";
             dropPais.DataTextField = "Pais";
@@ -64,8 +61,10 @@ namespace AppImportaciones.Views
             dropCiudad.DataSource = from c in CiudadController.getListado(dropPais.SelectedValue)
                                     select new
                                     {
-                                        ciudad = c.NombreCiudad
+                                        id = c.idCiudad,
+                                        ciudad = c.nombreCiudad
                                     };
+            dropCiudad.DataValueField = "id";
             dropCiudad.DataTextField = "ciudad";
             dropCiudad.DataBind();
         }
@@ -75,7 +74,17 @@ namespace AppImportaciones.Views
             System.Threading.Thread.Sleep(2000);
             try
             {
-                lbMensaje.Text = UsuarioController.addUsuario(txtId.Text, txtNombre.Text, txtAp1.Text, txtAp2.Text, txtFecha.Text, dropRol.SelectedValue, txtEmail.Text, txtNum.Text, dropPais.SelectedValue, dropCiudad.SelectedValue, txtPassword.Text);
+                lbMensaje.Text = UsuarioController.addUsuario(txtNombre.Text, txtAp1.Text, txtAp2.Text, txtFecha.Text, dropRol.SelectedValue, txtEmail.Text, txtNum.Text, dropPais.SelectedValue, dropCiudad.SelectedValue, txtPassword.Text);
+
+                //Limpiar campos
+                txtNombre.Text = "";
+                txtAp1.Text = "";
+                txtAp2.Text = "";
+                txtFecha.Text = "";
+                txtEmail.Text = "";
+                txtNum.Text = "";
+                txtPassword.Text = "";
+                txtRepetirPassword.Text = "";
             }
             catch (Exception ex)
             {
@@ -84,16 +93,15 @@ namespace AppImportaciones.Views
             }
         }
 
-        protected void lnkSeleccionar_Click(object sender, EventArgs e)
-        {
-            dropCiudad.Enabled = true;
-            cargarDropCiudad();
-        }
-
         protected void lnkListar_Click(object sender, EventArgs e)
         {
             System.Threading.Thread.Sleep(2000);
             Response.Redirect("ListUsuario.aspx");
+        }
+
+        protected void dropPais_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cargarDropCiudad();
         }
     }
 }

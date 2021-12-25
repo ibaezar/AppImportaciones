@@ -12,7 +12,6 @@ namespace AppImportaciones.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Helpers.precargarDatos();
             if (!IsPostBack)
             {
                 cargarGrid();
@@ -24,10 +23,10 @@ namespace AppImportaciones.Views
             grdProducto.DataSource = from p in ProductoController.GetProductos()
                                      select new
                                      {
-                                         Producto = p.NombreProducto,
-                                         Valor = p.Valor,
-                                         Stock = p.Stock,
-                                         CodigoVendedor = p.CodigoVendedor
+                                         Producto = p.nombreProducto,
+                                         Valor = p.valor,
+                                         Stock = p.stock
+                                         //CodigoVendedor = p.codigoVendedor
                                      };
             grdProducto.DataBind();
         }

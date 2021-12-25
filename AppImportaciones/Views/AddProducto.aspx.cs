@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using AppImportaciones.Controllers;
-using AppImportaciones.Models;
 
 namespace AppImportaciones.Views
 {
@@ -13,13 +12,11 @@ namespace AppImportaciones.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Helpers.precargarDatos();
-
             //Validacion de usuario administrador
             if (Session["login"] != null)
             {
                 Usuario usr = (Usuario)Session["login"];
-                if (usr.Rol != "Administrador" && usr.Rol != "Vendedor")
+                if (usr.rol != "Administrador" && usr.rol != "Vendedor")
                 {
                     Response.Redirect("index.aspx");
                 }
@@ -41,8 +38,8 @@ namespace AppImportaciones.Views
             dropVendedor.DataSource = from v in UsuarioController.getUserByRol("Vendedor")
                                       select new
                                       {
-                                          id = v.IdUsuario,
-                                          nombre = v.Nombre + " " + v.PrimerApellido
+                                          id = v.idUsuario,
+                                          nombre = v.nombre + " " + v.primerApellido
                                       };
             dropVendedor.DataValueField = "id";
             dropVendedor.DataTextField = "nombre";
