@@ -42,6 +42,7 @@
                     <asp:MenuItem Text="Productos">
                         <asp:MenuItem NavigateUrl="~/Views/ListProducto.aspx" Text="Listar Productos"></asp:MenuItem>
                         <asp:MenuItem NavigateUrl="~/Views/AddProducto.aspx" Text="Crear Producto"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Views/DeleteProducto.aspx" Text="Eliminar Producto"></asp:MenuItem>
                     </asp:MenuItem>
                     <asp:MenuItem Text="Usuarios">
                         <asp:MenuItem NavigateUrl="~/Views/ListUsuario.aspx" Text="Listar Usuarios"></asp:MenuItem>

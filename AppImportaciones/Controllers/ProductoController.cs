@@ -34,6 +34,21 @@ namespace AppImportaciones.Controllers
             }
         }
 
+        public static string deleteProducto(string id)
+        {
+            try
+            {
+                db.Producto.Remove(db.Producto.Find(int.Parse(id)));
+                db.SaveChanges();
+
+                return "Producto eliminado correctamente";
+            }
+            catch (Exception e)
+            {
+                return "Error: " + e.Message;
+            }
+        }
+
         public  static List<Producto> GetProductos()
         {
             listaProducto.Clear();

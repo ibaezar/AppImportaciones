@@ -26,7 +26,6 @@ namespace AppImportaciones.Views
                                          Producto = p.nombreProducto,
                                          Valor = p.valor,
                                          Stock = p.stock
-                                         //CodigoVendedor = p.codigoVendedor
                                      };
             grdProducto.DataBind();
         }
@@ -35,6 +34,12 @@ namespace AppImportaciones.Views
         {
             System.Threading.Thread.Sleep(2000);
             Response.Redirect("AddProducto.aspx");
+        }
+
+        protected void lnkEliminar_Click(object sender, EventArgs e)
+        {
+            System.Threading.Thread.Sleep(2000);
+            Response.Redirect("DeleteProducto.aspx");
         }
     }
 }

@@ -1,18 +1,20 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Main.Master" AutoEventWireup="true" CodeBehind="ListProducto.aspx.cs" Inherits="AppImportaciones.Views.ListProducto1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Main.Master" AutoEventWireup="true" CodeBehind="DeleteProducto.aspx.cs" Inherits="AppImportaciones.Views.DeleteProducto" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+<asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             <div>
-                <asp:Label ID="lbTitulo" runat="server" Text="Listado de productos"></asp:Label>
-
+                <asp:Label ID="lblTitulo" runat="server" Text="Seleccione el producto a Eliminar"></asp:Label>
                 <br /><br />
-                <asp:GridView ID="grdProducto" runat="server"></asp:GridView>
+                <asp:DropDownList ID="dropProductos" runat="server"></asp:DropDownList>
+                <asp:LinkButton ID="lnkEliminar" runat="server" OnClick="lnkEliminar_Click">Eliminar</asp:LinkButton>
                 <br /><br />
-                <asp:LinkButton ID="lnkAgregar" runat="server" OnClick="lnkAgregar_Click">Agregar productos </asp:LinkButton>  | 
-                <asp:LinkButton ID="lnkEliminar" runat="server" OnClick="lnkEliminar_Click">Eliminar productos</asp:LinkButton>
+                <asp:Label ID="lbMensaje" runat="server" Text=""></asp:Label>
+                <br /><br />
+                <asp:LinkButton ID="lnkListar" runat="server" OnClick="lnkListar_Click">Listar Productos </asp:LinkButton> | 
+                <asp:LinkButton ID="lnkAgregar" runat="server" OnClick="lnkAgregar_Click">Agregar Productos</asp:LinkButton>
             </div>
         </ContentTemplate>
     </asp:UpdatePanel>

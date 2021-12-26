@@ -93,6 +93,7 @@
     <Content Include="Views\AddPais.aspx" />
     <Content Include="Views\AddProducto.aspx" />
     <Content Include="Views\AddUsuario.aspx" />
+    <Content Include="Views\DeleteProducto.aspx" />
     <Content Include="Views\Index.aspx" />
     <Content Include="Views\ListCiudad.aspx" />
     <Content Include="Views\ListPais.aspx" />
@@ -180,6 +181,13 @@
     </Compile>
     <Compile Include="Views\AddUsuario.aspx.designer.cs">
       <DependentUpon>AddUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DeleteProducto.aspx.cs">
+      <DependentUpon>DeleteProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\DeleteProducto.aspx.designer.cs">
+      <DependentUpon>DeleteProducto.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
