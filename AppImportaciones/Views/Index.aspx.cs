@@ -23,7 +23,7 @@ namespace AppImportaciones.Views
                 {
                     if (usuario.email.Equals(txtEmail.Text))
                     {
-                        if (usuario.password.Equals(txtPassword.Text))
+                        if (usuario.password.Equals(UsuarioController.GetMD5(txtPassword.Text)))
                         {
                             Session["login"] = usuario;
                             Response.Redirect("ListUsuario.aspx");

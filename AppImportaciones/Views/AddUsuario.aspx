@@ -88,7 +88,7 @@
                     <td class="auto-style22">Numero de celular</td>
                     <td>
                         +56
-                        <asp:TextBox ID="txtNum" runat="server" Width="147px"></asp:TextBox>
+                        <asp:TextBox ID="txtNum" runat="server" Width="156px"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtNum" ErrorMessage="Campo requerido" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>

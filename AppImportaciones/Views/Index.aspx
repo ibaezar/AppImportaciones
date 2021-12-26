@@ -51,7 +51,7 @@
                     <asp:Button ID="btnIngresar" runat="server" OnClick="Button1_Click" Text="Ingresar" />
                 </td>
                 <td class="auto-style7">
-                    <asp:Label ID="lbMensaje" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="lbMensaje" runat="server" Text="" ForeColor="red"></asp:Label>
                 </td>
             </tr>
         </table>
